@@ -5,7 +5,7 @@ import Toybox.Graphics;
 // All numbers are for a 390 px screen and are scaled by Draw.p().
 module LayoutNeovim {
 
-    function draw(dc as Dc, blink as Boolean) as Void {
+    function draw(dc as Dc) as Void {
         var w = dc.getWidth();
         var cx = w / 2;
         var rowX = Draw.p(92);
@@ -26,11 +26,9 @@ module LayoutNeovim {
 
         var time = Clock.timeText();
         Draw.text(dc, timeX, bandY + bandH / 2, Fonts.big, Theme.c(Theme.BFG), time, Graphics.TEXT_JUSTIFY_LEFT);
-        if (blink) {
-            var cur = timeX + dc.getTextWidthInPixels(time, Fonts.big) + Draw.p(6);
-            dc.setColor(Theme.c(Theme.ACCENT), Graphics.COLOR_TRANSPARENT);
-            dc.fillRectangle(cur, bandY + Draw.p(14), Draw.p(22), bandH - Draw.p(28));
-        }
+        var secX = timeX + dc.getTextWidthInPixels(time, Fonts.big) + Draw.p(6);
+        Draw.text(dc, secX, bandY + bandH / 2 + Draw.p(23), Fonts.row,
+                  Theme.c(Theme.ACCENT), Clock.secondsText(), Graphics.TEXT_JUSTIFY_LEFT);
 
         row(dc, 1, Draw.p(228), rowX, 2);
         row(dc, 2, Draw.p(250), rowX, 3);
@@ -39,8 +37,9 @@ module LayoutNeovim {
         var boxH = Draw.p(52);
         Draw.box(dc, Draw.p(74), boxY, Draw.p(242), boxH, "hr", Fonts.small);
         Draw.graph(dc, Draw.p(82), boxY + Draw.p(10), Draw.p(226), boxH - Draw.p(18));
+        Draw.graphAverage(dc, cx, Draw.p(341));
 
-        statusLine(dc, cx, Draw.p(348));
+        statusLine(dc, cx, Draw.p(362));
     }
 
     function row(dc as Dc, n as Number, y as Number, x as Number, slot as Number) as Void {

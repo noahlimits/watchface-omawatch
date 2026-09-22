@@ -78,6 +78,11 @@ module Draw {
         }
     }
 
+    function graphAverage(dc as Dc, cx as Number, y as Number) as Void {
+        var value = Data.histAvg == null ? "--" : (Data.histAvg as Number).toString();
+        text(dc, cx, y, Fonts.small, Theme.c(Theme.DFG), "4h avg " + value + " bpm", Graphics.TEXT_JUSTIFY_CENTER);
+    }
+
     // btop-style box with a title.
     function box(dc as Dc, x as Number, y as Number, w as Number, h as Number,
                  title as String, font as Graphics.FontType) as Void {

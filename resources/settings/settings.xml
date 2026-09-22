@@ -69,6 +69,8 @@
             <listEntry value="9">@Strings.ValueStepsGoal</listEntry>
             <listEntry value="10">@Strings.ValueFloorsGoal</listEntry>
             <listEntry value="11">@Strings.ValueActiveGoal</listEntry>
+            <listEntry value="12">@Strings.ValueSunrise</listEntry>
+            <listEntry value="13">@Strings.ValueSunset</listEntry>
         </settingConfig>
     </setting>
 
@@ -86,6 +88,8 @@
             <listEntry value="9">@Strings.ValueStepsGoal</listEntry>
             <listEntry value="10">@Strings.ValueFloorsGoal</listEntry>
             <listEntry value="11">@Strings.ValueActiveGoal</listEntry>
+            <listEntry value="12">@Strings.ValueSunrise</listEntry>
+            <listEntry value="13">@Strings.ValueSunset</listEntry>
         </settingConfig>
     </setting>
 
@@ -103,6 +107,8 @@
             <listEntry value="9">@Strings.ValueStepsGoal</listEntry>
             <listEntry value="10">@Strings.ValueFloorsGoal</listEntry>
             <listEntry value="11">@Strings.ValueActiveGoal</listEntry>
+            <listEntry value="12">@Strings.ValueSunrise</listEntry>
+            <listEntry value="13">@Strings.ValueSunset</listEntry>
         </settingConfig>
     </setting>
 
@@ -120,6 +126,8 @@
             <listEntry value="9">@Strings.ValueStepsGoal</listEntry>
             <listEntry value="10">@Strings.ValueFloorsGoal</listEntry>
             <listEntry value="11">@Strings.ValueActiveGoal</listEntry>
+            <listEntry value="12">@Strings.ValueSunrise</listEntry>
+            <listEntry value="13">@Strings.ValueSunset</listEntry>
         </settingConfig>
     </setting>
 

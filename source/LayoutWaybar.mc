@@ -32,7 +32,11 @@ module LayoutWaybar {
             Draw.text(dc, w - Draw.p(34), Draw.p(112), Fonts.small, Theme.c(Theme.DFG), Data.barRight(Theme.topBar), Graphics.TEXT_JUSTIFY_RIGHT);
         }
 
-        Draw.text(dc, cx, Draw.p(172), Fonts.big, Theme.c(Theme.BFG), Clock.timeText(), Graphics.TEXT_JUSTIFY_CENTER);
+        var time = Clock.timeText();
+        Draw.text(dc, cx, Draw.p(172), Fonts.big, Theme.c(Theme.BFG), time, Graphics.TEXT_JUSTIFY_CENTER);
+        var secX = cx + dc.getTextWidthInPixels(time, Fonts.big) / 2 + Draw.p(6);
+        Draw.text(dc, secX, Draw.p(195), Fonts.row, Theme.c(Theme.ACCENT),
+                  Clock.secondsText(), Graphics.TEXT_JUSTIFY_LEFT);
 
         var left = cx - Draw.p(142);
         var right = cx + Draw.p(22);
@@ -46,6 +50,7 @@ module LayoutWaybar {
         var boxH = Draw.p(50);
         Draw.box(dc, Draw.p(75), boxY, Draw.p(240), boxH, "hr", Fonts.small);
         Draw.graph(dc, Draw.p(83), boxY + Draw.p(9), Draw.p(224), boxH - Draw.p(18));
+        Draw.graphAverage(dc, cx, Draw.p(350));
     }
 
     function rowAt(dc as Dc, x as Number, y as Number, eq as Number, slot as Number) as Void {

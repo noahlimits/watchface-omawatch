@@ -7,7 +7,7 @@ import Toybox.Application;
 module SettingsMenu {
 
     const VALUES = ["Heart rate", "Body battery", "Elevation", "Steps", "Temperature", "Watch battery", "Floors", "Stress",
-                    "Step goal %", "Steps / goal", "Floors / goal", "Active min / goal"];
+                    "Step goal %", "Steps / goal", "Floors / goal", "Active min / goal", "Sunrise", "Sunset"];
     const LAYOUTS = ["Neovim", "Waybar"];
     const TOP_BARS = ["Daylight", "Step goal", "Floors goal", "Active minutes", "Body battery", "Watch battery", "Day", "Off"];
     const TEMP_UNITS = ["Watch setting", "Celsius", "Fahrenheit"];

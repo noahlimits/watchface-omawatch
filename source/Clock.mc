@@ -15,6 +15,10 @@ module Clock {
         return Data.two(hour) + ":" + Data.two(t.min);
     }
 
+    function secondsText() as String {
+        return Data.two(System.getClockTime().sec);
+    }
+
     // "thu 10 sep"
     function dateText(lower as Boolean) as String {
         var i = Gregorian.info(Time.now(), Time.FORMAT_MEDIUM);

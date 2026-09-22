@@ -48,6 +48,8 @@
     <string id="ValueStepsGoal">Steps / goal</string>
     <string id="ValueFloorsGoal">Floors / goal</string>
     <string id="ValueActiveGoal">Active minutes / goal</string>
+    <string id="ValueSunrise">Sunrise</string>
+    <string id="ValueSunset">Sunset</string>
 
     <string id="TopBarTitle">Top bar</string>
     <string id="TopBar0">Daylight</string>

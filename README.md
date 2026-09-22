@@ -23,6 +23,11 @@ code-editor look, and the colour schemes of the Omarchy desktop.
   goal, active minutes, body battery, watch battery, the day, or off.
 - Temperature in the unit of the watch, or always in Celsius or Fahrenheit.
 - Heart rate graph of the last hours.
+- A four-hour average below the heart rate graph, calculated from the same
+  available history samples. It shows `--` when no samples are available.
+- Small seconds beside the main time while the face is awake. Always-on mode
+  continues to update the time once per minute.
+- Sunrise and sunset as optional values for any of the four rows.
 - Always-on mode with dim digits that move every minute.
 - Settings on the watch itself: hold MENU on the face and open its settings.
   No phone needed.

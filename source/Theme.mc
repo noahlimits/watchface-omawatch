@@ -24,7 +24,7 @@ module Theme {
         if (layout < 0) { layout = Cfg.LAYOUT; }
         slots = [num("Slot1", 0), num("Slot2", 1), num("Slot3", 2), num("Slot4", 3)];
         for (var i = 0; i < slots.size(); i++) {
-            if (slots[i] < 0 || slots[i] > 11) { slots[i] = 0; }
+            if (slots[i] < 0 || slots[i] > 13) { slots[i] = 0; }
         }
         topBar = num("TopBar", 0);
         if (topBar < 0 || topBar > 7) { topBar = 0; }

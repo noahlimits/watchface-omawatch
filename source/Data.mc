@@ -25,6 +25,7 @@ module Data {
     var bat as Number = 0;
 
     var hist as Array<Number> = [] as Array<Number>;   // heart rate, oldest first
+    var histAvg as Number or Null = null;
     var histMin as Number = 40;
     var histMax as Number = 120;
 
@@ -80,12 +81,14 @@ module Data {
             var values = [] as Array<Number>;
             var lo = 250;
             var hi = 0;
+            var sum = 0;
             var s = it.next();
             while (s != null) {
                 if (s.data != null) {
                     var v = (s.data as Float).toNumber();
                     if (v > 0) {
                         values.add(v);
+                        sum += v;
                         if (v < lo) { lo = v; }
                         if (v > hi) { hi = v; }
                     }
@@ -93,6 +96,7 @@ module Data {
                 s = it.next();
             }
             hist = values;
+            histAvg = values.size() > 0 ? ((sum.toFloat() / values.size()) + 0.5).toNumber() : null;
             if (hi > lo) {
                 histMin = lo;
                 histMax = hi;
@@ -264,7 +268,7 @@ module Data {
 
     // Slot values, in the order of the settings list.
     function slotLabel(slot as Number) as String {
-        var names = ["hr", "bb", "elev", "steps", "temp", "bat", "floors", "stress", "goal", "steps", "floors", "active"];
+        var names = ["hr", "bb", "elev", "steps", "temp", "bat", "floors", "stress", "goal", "steps", "floors", "active", "sunrise", "sunset"];
         return slot >= 0 && slot < names.size() ? names[slot] : "";
     }
 
@@ -282,6 +286,8 @@ module Data {
             case 9: return ofGoal(steps, stepGoal);
             case 10: return ofGoal(floors, floorsGoal);
             case 11: return ofGoal(activeWeek, activeWeekGoal);
+            case 12: return sunriseText;
+            case 13: return sunsetText;
         }
         return "";
     }
