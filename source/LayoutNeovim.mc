@@ -59,7 +59,7 @@ module LayoutNeovim {
         var t = tv == null ? "--" : tv.toString();
 
         Draw.text(dc, cx - Draw.p(86), y, Fonts.row, Theme.c(Theme.YELLOW), Draw.iconSun(), Graphics.TEXT_JUSTIFY_LEFT);
-        Draw.text(dc, cx - Draw.p(64), y, Fonts.row, Theme.c(Theme.FG), t + "°", Graphics.TEXT_JUSTIFY_LEFT);
+        Draw.text(dc, cx - Draw.p(64), y, Fonts.row, Theme.c(Theme.FG), t + "°C", Graphics.TEXT_JUSTIFY_LEFT);
 
         Draw.text(dc, cx + Draw.p(20), y, Fonts.row, Theme.c(Theme.FG), Draw.iconBattery(), Graphics.TEXT_JUSTIFY_LEFT);
         Draw.text(dc, cx + Draw.p(46), y, Fonts.row, Theme.c(Theme.FG), Data.bat.toString() + "%", Graphics.TEXT_JUSTIFY_LEFT);

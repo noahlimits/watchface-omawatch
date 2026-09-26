@@ -15,7 +15,6 @@ module Theme {
     var layout as Number = 0;
     var slots as Array<Number> = [0, 1, 2, 3];
     var topBar as Number = 0;
-    var tempUnit as Number = 0;
 
     function load() as Void {
         themeIndex = Cfg.THEME >= 0 ? Cfg.THEME : num("Theme", 0);
@@ -28,8 +27,6 @@ module Theme {
         }
         topBar = num("TopBar", 0);
         if (topBar < 0 || topBar > 7) { topBar = 0; }
-        tempUnit = num("TempUnit", 0);
-        if (tempUnit < 0 || tempUnit > 2) { tempUnit = 0; }
     }
 
     function num(key as String, fallback as Number) as Number {

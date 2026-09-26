@@ -47,14 +47,6 @@
         </settingConfig>
     </setting>
 
-    <setting propertyKey="@Properties.TempUnit" title="@Strings.TempUnitTitle">
-        <settingConfig type="list">
-            <listEntry value="0">@Strings.TempUnit0</listEntry>
-            <listEntry value="1">@Strings.TempUnit1</listEntry>
-            <listEntry value="2">@Strings.TempUnit2</listEntry>
-        </settingConfig>
-    </setting>
-
     <setting propertyKey="@Properties.Slot1" title="@Strings.Slot1Title">
         <settingConfig type="list">
             <listEntry value="0">@Strings.ValueHr</listEntry>

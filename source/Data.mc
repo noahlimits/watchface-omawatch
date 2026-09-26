@@ -184,14 +184,9 @@ module Data {
         return v < 10 ? "0" + v.toString() : v.toString();
     }
 
-    // Garmin reports the temperature in Celsius. Setting 0 follows the watch
-    // unit setting, 1 is Celsius, 2 is Fahrenheit.
+    // Garmin weather temperatures are Celsius; display them without converting.
     function tempValue() as Number or Null {
-        if (temp == null) { return null; }
-        var unit = Theme.tempUnit;
-        var fahrenheit = unit == 2 ||
-            (unit == 0 && System.getDeviceSettings().temperatureUnits == System.UNIT_STATUTE);
-        return fahrenheit ? ((temp as Number) * 9.0 / 5.0 + 32.0).toNumber() : temp;
+        return temp;
     }
 
     // 8432 of 10000 -> "8432/10k"
@@ -295,7 +290,7 @@ module Data {
     function slotUnit(slot as Number) as String {
         switch (slot) {
             case 2: return " m";
-            case 4: return "°";
+            case 4: return "°C";
             case 5: return "%";
             case 8: return "%";
         }

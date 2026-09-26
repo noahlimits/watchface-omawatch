@@ -14,14 +14,16 @@ module LayoutWaybar {
         dc.setColor(Theme.c(Theme.DBG), Graphics.COLOR_TRANSPARENT);
         dc.fillRectangle(0, 0, w, barH);
 
-        workspaces(dc, cx, Draw.p(40));
+        workspaces(dc, cx, Draw.p(30));
+
+        Draw.text(dc, cx, Draw.p(55), Fonts.small, Theme.c(Theme.FG),
+                  Clock.fullDateText(), Graphics.TEXT_JUSTIFY_CENTER);
 
         var tv = Data.tempValue();
         var t = tv == null ? "--" : tv.toString();
-        var barY = Draw.p(68);
+        var barY = Draw.p(80);
         Draw.text(dc, Draw.p(74), barY, Fonts.row, Theme.c(Theme.YELLOW), Draw.iconSun(), Graphics.TEXT_JUSTIFY_LEFT);
-        Draw.text(dc, Draw.p(96), barY, Fonts.row, Theme.c(Theme.FG), t + "°", Graphics.TEXT_JUSTIFY_LEFT);
-        Draw.text(dc, cx, barY, Fonts.row, Theme.c(Theme.FG), Clock.dateText(false), Graphics.TEXT_JUSTIFY_CENTER);
+        Draw.text(dc, Draw.p(96), barY, Fonts.row, Theme.c(Theme.FG), t + "°C", Graphics.TEXT_JUSTIFY_LEFT);
         Draw.text(dc, w - Draw.p(96), barY, Fonts.row, Theme.c(Theme.FG), Data.bat.toString() + "%", Graphics.TEXT_JUSTIFY_RIGHT);
         Draw.text(dc, w - Draw.p(92), barY, Fonts.row, Theme.c(Theme.FG), Draw.iconBattery(), Graphics.TEXT_JUSTIFY_LEFT);
 
