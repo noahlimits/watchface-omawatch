@@ -44,6 +44,10 @@ code-editor look, and the colour schemes of the Omarchy desktop.
 
 Get it from the Connect IQ Store, or build it yourself.
 
+For the public fēnix 8 AMOLED 47/51 mm listing, build with `public.jungle`.
+It uses the standard `fenix847mm` target and a separate application ID from the
+earlier fēnix 8 Pro beta (`store.jungle`). The two listings are independent.
+
 ## Build
 
 1. Install the Connect IQ SDK Manager, then the SDK and the devices you want.
