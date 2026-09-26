@@ -58,6 +58,14 @@ First release.
 1. C:/Users/commi/Documents/Codex/2026-09-22/ss/outputs/fenix8pro-neovim.png
 2. C:/Users/commi/Documents/Codex/2026-09-22/ss/outputs/fenix8pro-waybar.png
 
-## Supported watches
+## Public listing and supported watches
 
-The uploaded package targets fēnix 8 Pro 47 mm only. Other fēnix 8 or future fēnix 9 variants need separate simulator/device validation before being added.
+Public submission: https://apps.garmin.com/apps/480c0a70-d600-4b33-b60a-118975879513
+
+The public package targets Garmin's `fenix847mm` device profile, which includes
+the fēnix 8 AMOLED 47 mm and 51 mm (including model A04808). Garmin groups
+some quatix and tactix AMOLED part numbers under that same profile, so those
+names also appear on the Store compatibility tab; this listing does not claim
+to have been tested on those watches. The earlier fēnix 8 Pro beta is a
+separate app ID and remains independent. Automatic migration to future devices
+is disabled.
