@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <iq:manifest version="3" xmlns:iq="http://www.garmin.com/xml/connectiq">
-    <iq:application id="8e9417f6a99543e6958fa41407649b2b" type="watchface" name="@Strings.AppName" entry="OmaWatchApp" launcherIcon="@Drawables.LauncherIcon" minApiLevel="4.0.0">
+    <iq:application id="2ec391860ad744d69608a4e8cdaad610" type="watchface" name="@Strings.AppName" entry="OmaWatchApp" launcherIcon="@Drawables.LauncherIcon" minApiLevel="4.0.0">
         <iq:products>
             <iq:product id="fr265s"/>
             <iq:product id="venu2s"/>
