@@ -30,6 +30,8 @@ module Draw {
         dc.drawText(x, y, font, label, Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER);
 
         var eq = x + eqOffset;
+        var afterLabel = x + dc.getTextWidthInPixels(label, font) + p(4);
+        if (afterLabel > eq) { eq = afterLabel; }
         dc.setColor(Theme.c(Theme.CYAN), Graphics.COLOR_TRANSPARENT);
         dc.drawText(eq, y, font, "=", Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER);
 
@@ -48,6 +50,24 @@ module Draw {
                   colour as Number, value as String, justify as Number) as Void {
         dc.setColor(colour, Graphics.COLOR_TRANSPARENT);
         dc.drawText(x, y, font, value, justify | Graphics.TEXT_JUSTIFY_VCENTER);
+    }
+
+    // Keep the sunset icon subdued, but make its time readable in the themes
+    // whose dim foreground is too faint. Retro 82 already has enough contrast.
+    function rightBarText(dc as Dc, right as Number, y as Number,
+                          font as Graphics.FontType, kind as Number,
+                          dim as Boolean) as Void {
+        if (kind == 0 && !dim && Theme.themeIndex != 13) {
+            var icon = iconSunset();
+            var iconWidth = dc.getTextWidthInPixels(icon, font);
+            var gap = dc.getTextWidthInPixels(" ", font);
+            text(dc, right, y, font, Theme.c(Theme.DFG), icon, Graphics.TEXT_JUSTIFY_RIGHT);
+            text(dc, right - iconWidth - gap, y, font, Theme.c(Theme.FG),
+                 Data.sunsetText, Graphics.TEXT_JUSTIFY_RIGHT);
+            return;
+        }
+        text(dc, right, y, font, dim ? Theme.c(Theme.MUTED) : Theme.c(Theme.DFG),
+             Data.barRight(kind), Graphics.TEXT_JUSTIFY_RIGHT);
     }
 
     // btop-style bar graph of the heart rate history.
@@ -109,7 +129,7 @@ module Draw {
         var left = cx - w / 2;
         var right = cx + w / 2;
         text(dc, left, y, font, dim ? Theme.c(Theme.MUTED) : Theme.c(Theme.YELLOW), leftText, Graphics.TEXT_JUSTIFY_LEFT);
-        text(dc, right, y, font, dim ? Theme.c(Theme.MUTED) : Theme.c(Theme.DFG), rightText, Graphics.TEXT_JUSTIFY_RIGHT);
+        rightBarText(dc, right, y, font, kind, dim);
 
         var x0 = left + dc.getTextWidthInPixels(leftText, font) + p(8);
         var x1 = right - dc.getTextWidthInPixels(rightText, font) - p(8);

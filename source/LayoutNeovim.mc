@@ -13,10 +13,10 @@ module LayoutNeovim {
         var bandH = Draw.p(80);
         var timeX = Draw.p(74);
 
-        Draw.topBar(dc, cx, Draw.p(40), Draw.p(232), Fonts.small, false);
-        Draw.text(dc, cx, Draw.p(64), Fonts.row, Theme.c(Theme.MUTED), "-- " + Clock.dateText(true), Graphics.TEXT_JUSTIFY_CENTER);
+        Draw.topBar(dc, cx, Draw.p(36), Draw.p(232), Fonts.small, false);
+        Draw.text(dc, cx, Draw.p(60), Fonts.row, Theme.c(Theme.MUTED), "-- " + Clock.dateText(true), Graphics.TEXT_JUSTIFY_CENTER);
 
-        row(dc, 2, Draw.p(90), rowX, 0);
+        row(dc, 2, Draw.p(86), rowX, 0);
         row(dc, 1, Draw.p(112), rowX, 1);
 
         // Cursor line
@@ -31,7 +31,7 @@ module LayoutNeovim {
                   Theme.c(Theme.ACCENT), Clock.secondsText(), Graphics.TEXT_JUSTIFY_LEFT);
 
         row(dc, 1, Draw.p(228), rowX, 2);
-        row(dc, 2, Draw.p(250), rowX, 3);
+        row(dc, 2, Draw.p(254), rowX, 3);
 
         var boxY = Draw.p(278);
         var boxH = Draw.p(52);
@@ -39,7 +39,7 @@ module LayoutNeovim {
         Draw.graph(dc, Draw.p(82), boxY + Draw.p(10), Draw.p(226), boxH - Draw.p(18));
         Draw.graphAverage(dc, cx, Draw.p(341));
 
-        statusLine(dc, cx, Draw.p(362));
+        statusLine(dc, cx, Draw.p(367));
     }
 
     function row(dc as Dc, n as Number, y as Number, x as Number, slot as Number) as Void {

@@ -268,7 +268,7 @@ module Data {
 
     // Slot values, in the order of the settings list.
     function slotLabel(slot as Number) as String {
-        var names = ["hr", "bb", "elev", "steps", "temp", "bat", "floors", "stress", "goal", "steps", "floors", "active", "sunrise", "sunset"];
+        var names = ["hr", "bb", "elev", "steps", "temp", "bat", "floors", "stress", "goal", "steps", "floors", "active", "rise", "set"];
         return slot >= 0 && slot < names.size() ? names[slot] : "";
     }
 

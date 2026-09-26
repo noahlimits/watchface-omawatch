@@ -29,7 +29,7 @@ module LayoutWaybar {
 
         if (Theme.topBar != 7) {
             Draw.text(dc, Draw.p(34), Draw.p(112), Fonts.small, Theme.c(Theme.YELLOW), Data.barLeft(Theme.topBar), Graphics.TEXT_JUSTIFY_LEFT);
-            Draw.text(dc, w - Draw.p(34), Draw.p(112), Fonts.small, Theme.c(Theme.DFG), Data.barRight(Theme.topBar), Graphics.TEXT_JUSTIFY_RIGHT);
+            Draw.rightBarText(dc, w - Draw.p(34), Draw.p(112), Fonts.small, Theme.topBar, false);
         }
 
         var time = Clock.timeText();
@@ -43,8 +43,8 @@ module LayoutWaybar {
         var eq = Draw.p(56);
         rowAt(dc, left, Draw.p(236), eq, 0);
         rowAt(dc, right, Draw.p(236), eq, 1);
-        rowAt(dc, left, Draw.p(258), eq, 2);
-        rowAt(dc, right, Draw.p(258), eq, 3);
+        rowAt(dc, left, Draw.p(262), eq, 2);
+        rowAt(dc, right, Draw.p(262), eq, 3);
 
         var boxY = Draw.p(288);
         var boxH = Draw.p(50);
