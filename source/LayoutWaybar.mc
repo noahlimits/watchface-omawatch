@@ -20,7 +20,7 @@ module LayoutWaybar {
         var t = tv == null ? "--" : tv.toString();
         var tempText = t + "°C";
         var batteryText = Data.bat.toString() + "%";
-        var barY = Draw.p(68);
+        var barY = Draw.p(69);
         var tempX = Draw.p(74);
         var batteryRight = w - Draw.p(73);
         var dateX = (tempX + dc.getTextWidthInPixels(tempText, Fonts.header) +

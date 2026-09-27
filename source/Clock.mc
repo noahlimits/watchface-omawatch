@@ -28,7 +28,7 @@ module Clock {
 
     function headerDateText() as String {
         var i = Gregorian.info(Time.now(), Time.FORMAT_MEDIUM);
-        return (i.day_of_week as String) + ", " + (i.month as String) + " " + i.day.toString();
+        return (i.day_of_week as String) + " " + (i.month as String) + " " + i.day.toString();
     }
 
     function weekday() as Number {
