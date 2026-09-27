@@ -21,7 +21,7 @@ code-editor look, and the colour schemes of the Omarchy desktop.
   the goal, floors with the goal, active minutes with the weekly goal.
 - A top bar you can set: daylight from sunrise to sunset, step goal, floors
   goal, active minutes, body battery, watch battery, the day, or off.
-- Temperature in the unit of the watch, or always in Celsius or Fahrenheit.
+- Temperature is displayed in Celsius.
 - Heart rate graph of the last hours.
 - A four-hour average below the heart rate graph, calculated from the same
   available history samples. It shows `--` when no samples are available.
@@ -34,8 +34,9 @@ code-editor look, and the colour schemes of the Omarchy desktop.
 
 ## Requirements
 
-- A round AMOLED Garmin watch with Connect IQ API 5.0 or newer. 47 models,
-  from the Venu 2 to the Fenix 8.
+- The public OmaFork package targets fēnix 8 AMOLED 47/51 mm. Other layouts
+  and device profiles in the repository are not claimed as supported by that
+  Connect IQ listing.
 - Temperature and the sunrise and sunset times come from Garmin's weather
   data. The watch gets them from the phone, so they stay empty until the
   first sync.

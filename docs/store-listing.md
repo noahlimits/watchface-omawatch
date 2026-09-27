@@ -22,16 +22,25 @@
 
 ## Description
 
-OmaFork is a watch face in the style of a tiling Linux desktop. Your data reads like code, and the screen stays dark and flat. Based on the MIT-licensed OmaWatch by Jaša Šonc, with additional features from BetterLiving.
+OmaFork is a digital watch face based on Jaša Šonc's MIT-licensed OmaWatch. It keeps the original's Omarchy-inspired, dark desktop aesthetic and 22 colour schemes, but focuses on readability and the fēnix 8 AMOLED 47/51 mm.
 
 Two layouts, switchable at any time:
 
 - Neovim: your values as code rows, for example "hr = 54", around a highlighted cursor line that holds the time. A heart rate graph in a box at the bottom.
-- Waybar: a bar across the top with the weekday as workspace numbers, the date, the temperature and the watch battery. The bottom edge of the bar fills from sunrise to sunset, and a dot marks the time of day.
+- Waybar (the default): a bar across the top with the weekday as workspace numbers, the date, Celsius temperature and watch battery. The bottom edge of the bar fills from sunrise to sunset, and a dot marks the time of day.
+
+What this fork changes from the original OmaWatch:
+
+- Adds small seconds next to the main time while the face is awake.
+- Adds a four-hour average calculated from the available samples in the heart-rate graph; no samples show as dashes rather than an invented average.
+- Adds sunrise and sunset times as choices for the four configurable data slots.
+- Enlarges the smaller labels and adjusts contrast for sunset time in themes where it was hard to read.
+- Defaults to the two-column Waybar layout, with a compact weekday/month/day date and Celsius-only temperature.
+- Targets the fēnix 8 AMOLED 47/51 mm instead of the original's much broader device range. The original offers more data-field and graph choices; this fork keeps a smaller, focused selection.
 
 What you get:
 
-- 22 colour schemes, among them Tokyo Night, Catppuccin, Gruvbox, Everforest and Nord.
+- 22 inherited colour schemes, among them Tokyo Night, Catppuccin, Gruvbox, Everforest and Nord.
 - Four rows you set yourself: heart rate, body battery, elevation, steps, temperature, watch battery, floors, stress, sunrise or sunset.
 - A sunrise to sunset line that shows how much daylight is left.
 - A heart rate graph of the last four hours with an average of the available graph samples.
@@ -49,9 +58,9 @@ Privacy: the face reads heart rate history, body battery, steps, altitude and av
 
 OmaFork is not connected to Garmin or the Omarchy desktop project.
 
-## What's new (version 1.0.0)
+## What's new (version 1.1.0)
 
-First release.
+Waybar is now the default. The header uses a compact, naturally ordered date and Celsius-only temperature; small labels are easier to read, and sunset time has better contrast outside Retro 82.
 
 ## Screenshots to upload
 
