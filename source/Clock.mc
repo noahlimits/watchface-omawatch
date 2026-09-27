@@ -26,13 +26,9 @@ module Clock {
         return lower ? s.toLower() : s;
     }
 
-    function fullDateText() as String {
-        var i = Gregorian.info(Time.now(), Time.FORMAT_SHORT);
-        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        var months = ["January", "February", "March", "April", "May", "June",
-                      "July", "August", "September", "October", "November", "December"];
-        return days[(i.day_of_week as Number) - 1] + ", " +
-               months[(i.month as Number) - 1] + " " + i.day.toString();
+    function headerDateText() as String {
+        var i = Gregorian.info(Time.now(), Time.FORMAT_MEDIUM);
+        return (i.day_of_week as String) + ", " + (i.month as String) + " " + i.day.toString();
     }
 
     function weekday() as Number {

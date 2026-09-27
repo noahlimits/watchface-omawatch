@@ -14,18 +14,22 @@ module LayoutWaybar {
         dc.setColor(Theme.c(Theme.DBG), Graphics.COLOR_TRANSPARENT);
         dc.fillRectangle(0, 0, w, barH);
 
-        workspaces(dc, cx, Draw.p(30));
-
-        Draw.text(dc, cx, Draw.p(55), Fonts.small, Theme.c(Theme.FG),
-                  Clock.fullDateText(), Graphics.TEXT_JUSTIFY_CENTER);
+        workspaces(dc, cx, Draw.p(40));
 
         var tv = Data.tempValue();
         var t = tv == null ? "--" : tv.toString();
-        var barY = Draw.p(80);
-        Draw.text(dc, Draw.p(74), barY, Fonts.row, Theme.c(Theme.YELLOW), Draw.iconSun(), Graphics.TEXT_JUSTIFY_LEFT);
-        Draw.text(dc, Draw.p(96), barY, Fonts.row, Theme.c(Theme.FG), t + "°C", Graphics.TEXT_JUSTIFY_LEFT);
-        Draw.text(dc, w - Draw.p(96), barY, Fonts.row, Theme.c(Theme.FG), Data.bat.toString() + "%", Graphics.TEXT_JUSTIFY_RIGHT);
-        Draw.text(dc, w - Draw.p(92), barY, Fonts.row, Theme.c(Theme.FG), Draw.iconBattery(), Graphics.TEXT_JUSTIFY_LEFT);
+        var tempText = t + "°C";
+        var batteryText = Data.bat.toString() + "%";
+        var barY = Draw.p(68);
+        var tempX = Draw.p(74);
+        var batteryRight = w - Draw.p(73);
+        var dateX = (tempX + dc.getTextWidthInPixels(tempText, Fonts.row) +
+                     batteryRight - dc.getTextWidthInPixels(batteryText, Fonts.row)) / 2;
+        Draw.text(dc, Draw.p(52), barY, Fonts.row, Theme.c(Theme.YELLOW), Draw.iconSun(), Graphics.TEXT_JUSTIFY_LEFT);
+        Draw.text(dc, tempX, barY, Fonts.row, Theme.c(Theme.FG), tempText, Graphics.TEXT_JUSTIFY_LEFT);
+        Draw.text(dc, dateX, barY, Fonts.row, Theme.c(Theme.FG), Clock.headerDateText(), Graphics.TEXT_JUSTIFY_CENTER);
+        Draw.text(dc, batteryRight, barY, Fonts.row, Theme.c(Theme.FG), batteryText, Graphics.TEXT_JUSTIFY_RIGHT);
+        Draw.text(dc, w - Draw.p(69), barY, Fonts.row, Theme.c(Theme.FG), Draw.iconBattery(), Graphics.TEXT_JUSTIFY_LEFT);
 
         barEdge(dc, w, barH);
 
